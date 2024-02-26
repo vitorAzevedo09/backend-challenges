@@ -27,4 +27,12 @@ public class PlanetService {
     return planetRepository.findById(id);
   }
 
+  public Page<Planet> findByName(Pageable pageable, final String name) {
+    return planetRepository.findByName(pageable, name);
+  }
+
+  public Planet create(Planet planetIn) {
+    return planetRepository.save(planetIn);
+  }
+
 }
