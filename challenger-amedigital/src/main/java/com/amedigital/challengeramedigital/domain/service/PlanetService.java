@@ -35,4 +35,8 @@ public class PlanetService {
     return planetRepository.save(planetIn);
   }
 
+  public void delete(Planet planet) {
+    planetRepository.delete(planet);
+  }
+
 }
