@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 /**
  * Planet
  */
-@Entity(name = "planets")
+@Entity
 public class Planet {
 
   @Id
@@ -27,6 +27,26 @@ public class Planet {
   private String terrain;
 
   @Column
-  private Integer filmAppearances = 0;
+  private final Integer filmAppearances = 0;
+
+  public Long getID() {
+    return ID;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getWeather() {
+    return weather;
+  }
+
+  public String getTerrain() {
+    return terrain;
+  }
+
+  public Integer getFilmAppearances() {
+    return filmAppearances;
+  }
 
 }

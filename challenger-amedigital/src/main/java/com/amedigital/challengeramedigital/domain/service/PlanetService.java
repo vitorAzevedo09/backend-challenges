@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import com.amedigital.challengeramedigital.domain.model.Planet;
 import com.amedigital.challengeramedigital.domain.repository.PlanetRepository;
@@ -12,6 +13,7 @@ import com.amedigital.challengeramedigital.domain.repository.PlanetRepository;
 /**
  * PlanetService
  */
+@Service
 public class PlanetService {
 
   @Autowired
@@ -21,7 +23,7 @@ public class PlanetService {
     return planetRepository.findAll(pageable);
   }
 
-  public Optional<Planet> findOneOrFail(final Long id) {
+  public Optional<Planet> findOne(final Long id) {
     return planetRepository.findById(id);
   }
 
