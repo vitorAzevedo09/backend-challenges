@@ -28,7 +28,7 @@ public class PlanetService {
   }
 
   public Page<Planet> findByName(Pageable pageable, final String name) {
-    return planetRepository.findByName(pageable, name);
+    return planetRepository.findByNameContainingIgnoreCase(pageable, name);
   }
 
   public Planet create(Planet planetIn) {

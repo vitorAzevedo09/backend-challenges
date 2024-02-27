@@ -13,5 +13,5 @@ import com.amedigital.challengeramedigital.domain.model.Planet;
 @Repository
 public interface PlanetRepository extends JpaRepository<Planet, Long> {
 
-  public Page<Planet> findByName(Pageable pageable, final String name);
+  public Page<Planet> findByNameContainingIgnoreCase(Pageable pageable, final String name);
 }
