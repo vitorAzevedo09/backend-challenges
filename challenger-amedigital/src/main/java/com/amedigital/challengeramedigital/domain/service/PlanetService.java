@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.amedigital.challengeramedigital.domain.model.Planet;
 import com.amedigital.challengeramedigital.domain.repository.PlanetRepository;
+import com.amedigital.challengeramedigital.domain.repository.SwapiService;
 
 /**
  * PlanetService
@@ -18,6 +19,9 @@ public class PlanetService {
 
   @Autowired
   private PlanetRepository planetRepository;
+
+  @Autowired
+  private SwapiService swapiService;
 
   public Page<Planet> findAll(Pageable pageable) {
     return planetRepository.findAll(pageable);
@@ -32,6 +36,8 @@ public class PlanetService {
   }
 
   public Planet create(Planet planetIn) {
+    Integer quantityFilmAppearances = swapiService.getFilmAppearancesSwapiByName(planetIn.getName());
+    planetIn.changeFilmAppearances(quantityFilmAppearances);
     return planetRepository.save(planetIn);
   }
 

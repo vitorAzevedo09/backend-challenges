@@ -147,4 +147,9 @@ public class Planet {
       return planet;
     }
   }
+
+  public void changeFilmAppearances(Integer filmAppearances) {
+    this.filmAppearances = filmAppearances;
+  }
+
 }
