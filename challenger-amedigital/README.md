@@ -23,3 +23,13 @@ Desired functionalities:
 
 **Languages we use:** Kotlin, Scala, Java  
 **Banks we use:** PostgreSQL-11 with JSONB
+
+# How to run
+
+## Copy the env file example to .env
+
+``` $ cp env-example .env ```
+
+## Run using docker-compose integration
+
+``` ./gradlew bootRun ```
