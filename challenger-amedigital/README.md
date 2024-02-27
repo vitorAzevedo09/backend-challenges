@@ -33,3 +33,6 @@ Desired functionalities:
 ## Run using docker-compose integration
 
 ``` ./gradlew bootRun ```
+
+## Access the swagger documentation
+    go to the url: http//:server:port/swagger-ui/index.html
